@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
                 obj.property("name").toString().toUtf8().constData();
 
     obj.setProperty("height", 188);
-    qDebug() << "height: " << obj.property("heiget").toInt();
+    qDebug() << "height: " << obj.property("height").toInt();
 
     QObject::connect(&obj, &MyObject::nameChanged, [](QString tmp){
        qDebug() << "name after changed : " << tmp;
@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
 
     obj.setName("qt");
 
+    obj.setProperty("name","wangdao");
 
     return a.exec();
 }
